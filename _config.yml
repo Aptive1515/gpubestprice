@@ -1,0 +1,15 @@
+# GitHub Pages Configuration
+title: Best GPU Prices
+description: Real-time price tracking and comparison
+url: https://bestgpuprices.com
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+plugins: []
+
+# Exclude from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
