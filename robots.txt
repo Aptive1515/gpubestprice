@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://bestgpuprices.com/sitemap.xml
+Sitemap: https://gpubestprice.com/sitemap.xml
 
 # Disallow admin/temp folders
 Disallow: /admin/

@@ -4,16 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DL</title>
-    <meta name="description" content="✓ PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3 at $1014.49. Quality score 0.1/10. Compare best RTX 4080 Graphics Card prices and specificati">
+    <meta name="description" content="✓ PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3 at $1014.49. Quality score 10.0/10. Compare best RTX 4080 Graphics Card prices and specificat">
     <meta name="keywords" content="PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3, RTX 4080 Graphics Card, Graphics Card prices, buy RTX 4080, Graphics Card comparison, best Graphics Card 2026">
     <meta property="og:title" content="PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DL">
-    <meta property="og:description" content="✓ PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3 at $1014.49. Quality score 0.1/10. Compare best RTX 4080 Graphics Card prices and specificati">
-    <meta property="og:url" content="https://bestgpuprices.com/gpu-pny-geforce-rtx-4080-16gb-verto-triple-fan-graphics-card-dls-en.html">
+    <meta property="og:description" content="✓ PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3 at $1014.49. Quality score 10.0/10. Compare best RTX 4080 Graphics Card prices and specificat">
+    <meta property="og:url" content="https://gpubestprice.com/gpu-pny-geforce-rtx-4080-16gb-verto-triple-fan-graphics-card-dls-en.html">
     <meta property="og:type" content="product">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DL">
-    <meta name="twitter:description" content="✓ PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3 at $1014.49. Quality score 0.1/10. Compare best RTX 4080 Graphics Card prices and specificati">
-    <!-- Google Analytics: Add your ID in config.py -->
+    <meta name="twitter:description" content="✓ PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3 at $1014.49. Quality score 10.0/10. Compare best RTX 4080 Graphics Card prices and specificat">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF473SL0B8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Configuration GA4 avec enhanced measurement
+        gtag('config', 'G-PF473SL0B8', {
+            'send_page_view': true,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': true
+        });
+        
+        // Track outbound links (Amazon clicks)
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href*="amazon.com"]');
+            if (link) {
+                const href = link.getAttribute('href');
+                const card = link.closest('.product-card');
+                const title = card?.querySelector('.product-title')?.textContent || 'Unknown';
+                const priceText = card?.querySelector('.product-price')?.textContent || '0';
+                const price = parseFloat(priceText.replace('$', '').replace(',', ''));
+                
+                // Event GA4 standardisé pour clicks Amazon
+                gtag('event', 'click_amazon', {
+                    'event_category': 'outbound',
+                    'event_label': title.trim(),
+                    'product_name': title.trim(),
+                    'price': price,
+                    'value': price,
+                    'link_url': href,
+                    'link_domain': 'amazon.com'
+                });
+                
+                // Aussi envoyer comme outbound_click (standard GA4)
+                gtag('event', 'outbound_click', {
+                    'link_url': href,
+                    'link_domain': 'amazon.com',
+                    'outbound': true
+                });
+            }
+        });
+        
+        // Track page engagement
+        let engagementTimer = 0;
+        setInterval(function() {
+            engagementTimer += 10;
+            if (engagementTimer % 30 === 0) {  // Tous les 30s
+                gtag('event', 'user_engagement', {
+                    'engagement_time_msec': engagementTimer * 1000
+                });
+            }
+        }, 10000);
+    </script>
+    
     <style>
         
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
@@ -1140,9 +1196,9 @@ header .signature-aptive {
                     <h1>PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3</h1>
                     <div class="product-rating">⭐ 4.5 (0 reviews)</div>
                     
+                    <div class="recommendation-badge-detail top">🏆 Our Top Choice <span class="score">10.0/10</span></div>
                     
-                    
-                    <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+                    <div class="score-analysis"><strong>Outstanding Choice:</strong> top-rated (4.5★).</div>
                     
                     <div class="why-score">
                         Why this score? <a href="methodology_en.html">Learn more</a>
@@ -1153,9 +1209,9 @@ header .signature-aptive {
         'event_label': 'PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3',
         'product_name': 'PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3',
         'price': 1014.49,
-        'score': 0.1,
+        'score': 10.0,
         'value': 1014.49
-    });">🛒 View on Amazon - Fast Delivery</a>
+    });">🛒 Buy Now - Free Shipping</a>
                 </div>
             </div>
             

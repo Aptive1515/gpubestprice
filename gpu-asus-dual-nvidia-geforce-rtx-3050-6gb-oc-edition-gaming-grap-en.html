@@ -8,12 +8,68 @@
     <meta name="keywords" content="ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Graphics Card - PCIe 4.0, 6GB GDDR6 Memory, HDMI 2.1, DisplayPort 1.4a, 2-Slot Design, Axial-tech Fan Design, 0dB Technology, Steel Bracket, NVIDIA RTX Graphics Card, Graphics Card prices, buy NVIDIA RTX, Graphics Card comparison, best Graphics Card 2026">
     <meta property="og:title" content="ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Grap">
     <meta property="og:description" content="✓ ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Graphics Card - PCIe 4.0, 6GB GDDR6 Memory, HDMI 2.1, DisplayPort 1.4a, 2-Slot Design, Axial-tech Fan ">
-    <meta property="og:url" content="https://bestgpuprices.com/gpu-asus-dual-nvidia-geforce-rtx-3050-6gb-oc-edition-gaming-grap-en.html">
+    <meta property="og:url" content="https://gpubestprice.com/gpu-asus-dual-nvidia-geforce-rtx-3050-6gb-oc-edition-gaming-grap-en.html">
     <meta property="og:type" content="product">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Grap">
     <meta name="twitter:description" content="✓ ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Graphics Card - PCIe 4.0, 6GB GDDR6 Memory, HDMI 2.1, DisplayPort 1.4a, 2-Slot Design, Axial-tech Fan ">
-    <!-- Google Analytics: Add your ID in config.py -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF473SL0B8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Configuration GA4 avec enhanced measurement
+        gtag('config', 'G-PF473SL0B8', {
+            'send_page_view': true,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': true
+        });
+        
+        // Track outbound links (Amazon clicks)
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href*="amazon.com"]');
+            if (link) {
+                const href = link.getAttribute('href');
+                const card = link.closest('.product-card');
+                const title = card?.querySelector('.product-title')?.textContent || 'Unknown';
+                const priceText = card?.querySelector('.product-price')?.textContent || '0';
+                const price = parseFloat(priceText.replace('$', '').replace(',', ''));
+                
+                // Event GA4 standardisé pour clicks Amazon
+                gtag('event', 'click_amazon', {
+                    'event_category': 'outbound',
+                    'event_label': title.trim(),
+                    'product_name': title.trim(),
+                    'price': price,
+                    'value': price,
+                    'link_url': href,
+                    'link_domain': 'amazon.com'
+                });
+                
+                // Aussi envoyer comme outbound_click (standard GA4)
+                gtag('event', 'outbound_click', {
+                    'link_url': href,
+                    'link_domain': 'amazon.com',
+                    'outbound': true
+                });
+            }
+        });
+        
+        // Track page engagement
+        let engagementTimer = 0;
+        setInterval(function() {
+            engagementTimer += 10;
+            if (engagementTimer % 30 === 0) {  // Tous les 30s
+                gtag('event', 'user_engagement', {
+                    'engagement_time_msec': engagementTimer * 1000
+                });
+            }
+        }, 10000);
+    </script>
+    
     <style>
         
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
@@ -1140,9 +1196,9 @@ header .signature-aptive {
                     <h1>ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Graphics Card - PCIe 4.0, 6GB GDDR6 Memory, HDMI 2.1, DisplayPort 1.4a, 2-Slot Design, Axial-tech Fan Design, 0dB Technology, Steel Bracket</h1>
                     <div class="product-rating">⭐ 4.6 (0 reviews)</div>
                     
+                    <div class="recommendation-badge-detail top">🏆 Our Top Choice <span class="score">10.0/10</span></div>
                     
-                    
-                    <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+                    <div class="score-analysis"><strong>Outstanding Choice:</strong> top-rated (4.6★) + competitive price.</div>
                     
                     <div class="why-score">
                         Why this score? <a href="methodology_en.html">Learn more</a>
@@ -1153,9 +1209,9 @@ header .signature-aptive {
         'event_label': 'ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Graphics Card - PCIe 4.0, 6GB GDDR6 Memory, HDMI 2.1, DisplayPort 1.4a, 2-Slot Design, Axial-tech Fan Design, 0dB Technology, Steel Bracket',
         'product_name': 'ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Graphics Card - PCIe 4.0, 6GB GDDR6 Memory, HDMI 2.1, DisplayPort 1.4a, 2-Slot Design, Axial-tech Fan Design, 0dB Technology, Steel Bracket',
         'price': 180.38,
-        'score': 0.1,
+        'score': 10.0,
         'value': 180.38
-    });">🛒 View on Amazon - Fast Delivery</a>
+    });">🛒 Buy Now - Free Shipping</a>
                 </div>
             </div>
             

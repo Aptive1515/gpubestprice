@@ -8,12 +8,68 @@
     <meta name="keywords" content="MSI GeForce RTX 4090 Gaming X Trio 24G Gaming Graphics Card - 24GB GDDR6X, 2595 MHz, PCI Express Gen 4, 384-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR), Carte Graphique RTX 4090, prix Carte Graphique, acheter RTX 4090, comparatif Carte Graphique, meilleur Carte Graphique 2026">
     <meta property="og:title" content="MSI GeForce RTX 4090 Gaming X Trio 24G Gaming Graphics Card ">
     <meta property="og:description" content="✓ MSI GeForce RTX 4090 Gaming X Trio 24G Gaming Graphics Card - 24GB GDDR6X, 2595 MHz, PCI Express Gen 4, 384-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR">
-    <meta property="og:url" content="https://bestgpuprices.com/gpu-msi-geforce-rtx-4090-gaming-x-trio-24g-gaming-graphics-card-fr.html">
+    <meta property="og:url" content="https://gpubestprice.com/gpu-msi-geforce-rtx-4090-gaming-x-trio-24g-gaming-graphics-card-fr.html">
     <meta property="og:type" content="product">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MSI GeForce RTX 4090 Gaming X Trio 24G Gaming Graphics Card ">
     <meta name="twitter:description" content="✓ MSI GeForce RTX 4090 Gaming X Trio 24G Gaming Graphics Card - 24GB GDDR6X, 2595 MHz, PCI Express Gen 4, 384-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR">
-    <!-- Google Analytics: Add your ID in config.py -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF473SL0B8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Configuration GA4 avec enhanced measurement
+        gtag('config', 'G-PF473SL0B8', {
+            'send_page_view': true,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': true
+        });
+        
+        // Track outbound links (Amazon clicks)
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href*="amazon.com"]');
+            if (link) {
+                const href = link.getAttribute('href');
+                const card = link.closest('.product-card');
+                const title = card?.querySelector('.product-title')?.textContent || 'Unknown';
+                const priceText = card?.querySelector('.product-price')?.textContent || '0';
+                const price = parseFloat(priceText.replace('$', '').replace(',', ''));
+                
+                // Event GA4 standardisé pour clicks Amazon
+                gtag('event', 'click_amazon', {
+                    'event_category': 'outbound',
+                    'event_label': title.trim(),
+                    'product_name': title.trim(),
+                    'price': price,
+                    'value': price,
+                    'link_url': href,
+                    'link_domain': 'amazon.com'
+                });
+                
+                // Aussi envoyer comme outbound_click (standard GA4)
+                gtag('event', 'outbound_click', {
+                    'link_url': href,
+                    'link_domain': 'amazon.com',
+                    'outbound': true
+                });
+            }
+        });
+        
+        // Track page engagement
+        let engagementTimer = 0;
+        setInterval(function() {
+            engagementTimer += 10;
+            if (engagementTimer % 30 === 0) {  // Tous les 30s
+                gtag('event', 'user_engagement', {
+                    'engagement_time_msec': engagementTimer * 1000
+                });
+            }
+        }, 10000);
+    </script>
+    
     <style>
         
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
@@ -1140,9 +1196,9 @@ header .signature-aptive {
                     <h1>MSI GeForce RTX 4090 Gaming X Trio 24G Gaming Graphics Card - 24GB GDDR6X, 2595 MHz, PCI Express Gen 4, 384-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR)</h1>
                     <div class="product-rating">⭐ 4.3 (0 avis)</div>
                     
+                    <div class="recommendation-badge-detail excellent">⭐ Excellent rapport <span class="score">7.9/10</span></div>
                     
-                    
-                    <div class="score-analysis"><strong>Option Basique :</strong> bon pour budgets serrés.</div>
+                    <div class="score-analysis"><strong>Excellent Rapport :</strong> GPU moderne + bien noté (4.3★).</div>
                     
                     <div class="why-score">
                         Pourquoi ce score ? <a href="methodology_fr.html">En savoir plus</a>
@@ -1153,7 +1209,7 @@ header .signature-aptive {
         'event_label': 'MSI GeForce RTX 4090 Gaming X Trio 24G Gaming Graphics Card - 24GB GDDR6X, 2595 MHz, PCI Express Gen 4, 384-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR)',
         'product_name': 'MSI GeForce RTX 4090 Gaming X Trio 24G Gaming Graphics Card - 24GB GDDR6X, 2595 MHz, PCI Express Gen 4, 384-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR)',
         'price': 2922.98,
-        'score': 0.1,
+        'score': 7.9,
         'value': 2922.98
     });">🛒 Voir sur Amazon - Expédition Rapide</a>
                 </div>

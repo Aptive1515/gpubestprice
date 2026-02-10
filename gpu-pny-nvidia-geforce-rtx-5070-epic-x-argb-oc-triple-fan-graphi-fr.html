@@ -8,12 +8,68 @@
     <meta name="keywords" content="PNY NVIDIA GeForce RTX™ 5070 Epic-X™ ARGB OC Triple Fan, Graphics Card (12GB GDDR7, 192-bit, Boost Speed: 2685 MHz, SFF-Ready, PCIe® 5.0, HDMI®/DP 2.1, 2.4-Slot, Blackwell Architecture, DLSS 4), Carte Graphique RTX 5070, prix Carte Graphique, acheter RTX 5070, comparatif Carte Graphique, meilleur Carte Graphique 2026">
     <meta property="og:title" content="PNY NVIDIA GeForce RTX™ 5070 Epic-X™ ARGB OC Triple Fan, Gra">
     <meta property="og:description" content="✓ PNY NVIDIA GeForce RTX™ 5070 Epic-X™ ARGB OC Triple Fan, Graphics Card (12GB GDDR7, 192-bit, Boost Speed: 2685 MHz, SFF-Ready, PCIe® 5.0, HDMI®/DP 2.1, 2.4-Sl">
-    <meta property="og:url" content="https://bestgpuprices.com/gpu-pny-nvidia-geforce-rtx-5070-epic-x-argb-oc-triple-fan-graphi-fr.html">
+    <meta property="og:url" content="https://gpubestprice.com/gpu-pny-nvidia-geforce-rtx-5070-epic-x-argb-oc-triple-fan-graphi-fr.html">
     <meta property="og:type" content="product">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PNY NVIDIA GeForce RTX™ 5070 Epic-X™ ARGB OC Triple Fan, Gra">
     <meta name="twitter:description" content="✓ PNY NVIDIA GeForce RTX™ 5070 Epic-X™ ARGB OC Triple Fan, Graphics Card (12GB GDDR7, 192-bit, Boost Speed: 2685 MHz, SFF-Ready, PCIe® 5.0, HDMI®/DP 2.1, 2.4-Sl">
-    <!-- Google Analytics: Add your ID in config.py -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF473SL0B8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Configuration GA4 avec enhanced measurement
+        gtag('config', 'G-PF473SL0B8', {
+            'send_page_view': true,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': true
+        });
+        
+        // Track outbound links (Amazon clicks)
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href*="amazon.com"]');
+            if (link) {
+                const href = link.getAttribute('href');
+                const card = link.closest('.product-card');
+                const title = card?.querySelector('.product-title')?.textContent || 'Unknown';
+                const priceText = card?.querySelector('.product-price')?.textContent || '0';
+                const price = parseFloat(priceText.replace('$', '').replace(',', ''));
+                
+                // Event GA4 standardisé pour clicks Amazon
+                gtag('event', 'click_amazon', {
+                    'event_category': 'outbound',
+                    'event_label': title.trim(),
+                    'product_name': title.trim(),
+                    'price': price,
+                    'value': price,
+                    'link_url': href,
+                    'link_domain': 'amazon.com'
+                });
+                
+                // Aussi envoyer comme outbound_click (standard GA4)
+                gtag('event', 'outbound_click', {
+                    'link_url': href,
+                    'link_domain': 'amazon.com',
+                    'outbound': true
+                });
+            }
+        });
+        
+        // Track page engagement
+        let engagementTimer = 0;
+        setInterval(function() {
+            engagementTimer += 10;
+            if (engagementTimer % 30 === 0) {  // Tous les 30s
+                gtag('event', 'user_engagement', {
+                    'engagement_time_msec': engagementTimer * 1000
+                });
+            }
+        }, 10000);
+    </script>
+    
     <style>
         
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
@@ -1140,9 +1196,9 @@ header .signature-aptive {
                     <h1>PNY NVIDIA GeForce RTX™ 5070 Epic-X™ ARGB OC Triple Fan, Graphics Card (12GB GDDR7, 192-bit, Boost Speed: 2685 MHz, SFF-Ready, PCIe® 5.0, HDMI®/DP 2.1, 2.4-Slot, Blackwell Architecture, DLSS 4)</h1>
                     <div class="product-rating">⭐ 4.6 (0 avis)</div>
                     
+                    <div class="recommendation-badge-detail top">🏆 Notre Top Choix <span class="score">9.7/10</span></div>
                     
-                    
-                    <div class="score-analysis"><strong>Option Basique :</strong> bon pour budgets serrés.</div>
+                    <div class="score-analysis"><strong>Choix Exceptionnel :</strong> excellentes notes (4.6★) + prix très compétitif.</div>
                     
                     <div class="why-score">
                         Pourquoi ce score ? <a href="methodology_fr.html">En savoir plus</a>
@@ -1153,9 +1209,9 @@ header .signature-aptive {
         'event_label': 'PNY NVIDIA GeForce RTX™ 5070 Epic-X™ ARGB OC Triple Fan, Graphics Card (12GB GDDR7, 192-bit, Boost Speed: 2685 MHz, SFF-Ready, PCIe® 5.0, HDMI®/DP 2.1, 2.4-Slot, Blackwell Architecture, DLSS 4)',
         'product_name': 'PNY NVIDIA GeForce RTX™ 5070 Epic-X™ ARGB OC Triple Fan, Graphics Card (12GB GDDR7, 192-bit, Boost Speed: 2685 MHz, SFF-Ready, PCIe® 5.0, HDMI®/DP 2.1, 2.4-Slot, Blackwell Architecture, DLSS 4)',
         'price': 557.49,
-        'score': 0.1,
+        'score': 9.7,
         'value': 557.49
-    });">🛒 Voir sur Amazon - Expédition Rapide</a>
+    });">🛒 Acheter Maintenant - Livraison Gratuite</a>
                 </div>
             </div>
             

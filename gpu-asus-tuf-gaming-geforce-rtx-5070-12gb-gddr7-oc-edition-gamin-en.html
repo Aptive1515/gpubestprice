@@ -8,12 +8,68 @@
     <meta name="keywords" content="ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans), RTX 5070 Graphics Card, Graphics Card prices, buy RTX 5070, Graphics Card comparison, best Graphics Card 2026">
     <meta property="og:title" content="ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gam">
     <meta property="og:description" content="✓ ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB ">
-    <meta property="og:url" content="https://bestgpuprices.com/gpu-asus-tuf-gaming-geforce-rtx-5070-12gb-gddr7-oc-edition-gamin-en.html">
+    <meta property="og:url" content="https://gpubestprice.com/gpu-asus-tuf-gaming-geforce-rtx-5070-12gb-gddr7-oc-edition-gamin-en.html">
     <meta property="og:type" content="product">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gam">
     <meta name="twitter:description" content="✓ ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB ">
-    <!-- Google Analytics: Add your ID in config.py -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF473SL0B8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Configuration GA4 avec enhanced measurement
+        gtag('config', 'G-PF473SL0B8', {
+            'send_page_view': true,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': true
+        });
+        
+        // Track outbound links (Amazon clicks)
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href*="amazon.com"]');
+            if (link) {
+                const href = link.getAttribute('href');
+                const card = link.closest('.product-card');
+                const title = card?.querySelector('.product-title')?.textContent || 'Unknown';
+                const priceText = card?.querySelector('.product-price')?.textContent || '0';
+                const price = parseFloat(priceText.replace('$', '').replace(',', ''));
+                
+                // Event GA4 standardisé pour clicks Amazon
+                gtag('event', 'click_amazon', {
+                    'event_category': 'outbound',
+                    'event_label': title.trim(),
+                    'product_name': title.trim(),
+                    'price': price,
+                    'value': price,
+                    'link_url': href,
+                    'link_domain': 'amazon.com'
+                });
+                
+                // Aussi envoyer comme outbound_click (standard GA4)
+                gtag('event', 'outbound_click', {
+                    'link_url': href,
+                    'link_domain': 'amazon.com',
+                    'outbound': true
+                });
+            }
+        });
+        
+        // Track page engagement
+        let engagementTimer = 0;
+        setInterval(function() {
+            engagementTimer += 10;
+            if (engagementTimer % 30 === 0) {  // Tous les 30s
+                gtag('event', 'user_engagement', {
+                    'engagement_time_msec': engagementTimer * 1000
+                });
+            }
+        }, 10000);
+    </script>
+    
     <style>
         
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
@@ -1140,7 +1196,7 @@ header .signature-aptive {
                     <h1>ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)</h1>
                     <div class="product-rating">⭐ 4.7 (0 reviews)</div>
                     
-                    
+                    <div class="recommendation-badge-detail good">✓ Good Choice <span class="score">5.6/10</span></div>
                     
                     <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
                     
@@ -1153,7 +1209,7 @@ header .signature-aptive {
         'event_label': 'ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)',
         'product_name': 'ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)',
         'price': 960.77,
-        'score': 0.0,
+        'score': 5.6,
         'value': 960.77
     });">🛒 View on Amazon - Fast Delivery</a>
                 </div>

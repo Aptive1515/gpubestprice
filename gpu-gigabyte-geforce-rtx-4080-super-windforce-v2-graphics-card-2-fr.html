@@ -8,12 +8,68 @@
     <meta name="keywords" content="Gigabyte GeForce RTX 4080 Super WINDFORCE V2 Graphics Card - 2550MHz Core, 16GB GDDR6X 23000MHz 256-bit Memory, PCI-E 4.0, 3X DP 1.4, 1x HDMI 2.1a, NVIDIA DLSS 3.5, GV-N408SWF3V2-16GD, Carte Graphique RTX 4080, prix Carte Graphique, acheter RTX 4080, comparatif Carte Graphique, meilleur Carte Graphique 2026">
     <meta property="og:title" content="Gigabyte GeForce RTX 4080 Super WINDFORCE V2 Graphics Card -">
     <meta property="og:description" content="✓ Gigabyte GeForce RTX 4080 Super WINDFORCE V2 Graphics Card - 2550MHz Core, 16GB GDDR6X 23000MHz 256-bit Memory, PCI-E 4.0, 3X DP 1.4, 1x HDMI 2.1a, NVIDIA DLS">
-    <meta property="og:url" content="https://bestgpuprices.com/gpu-gigabyte-geforce-rtx-4080-super-windforce-v2-graphics-card-2-fr.html">
+    <meta property="og:url" content="https://gpubestprice.com/gpu-gigabyte-geforce-rtx-4080-super-windforce-v2-graphics-card-2-fr.html">
     <meta property="og:type" content="product">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Gigabyte GeForce RTX 4080 Super WINDFORCE V2 Graphics Card -">
     <meta name="twitter:description" content="✓ Gigabyte GeForce RTX 4080 Super WINDFORCE V2 Graphics Card - 2550MHz Core, 16GB GDDR6X 23000MHz 256-bit Memory, PCI-E 4.0, 3X DP 1.4, 1x HDMI 2.1a, NVIDIA DLS">
-    <!-- Google Analytics: Add your ID in config.py -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF473SL0B8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Configuration GA4 avec enhanced measurement
+        gtag('config', 'G-PF473SL0B8', {
+            'send_page_view': true,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': true
+        });
+        
+        // Track outbound links (Amazon clicks)
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href*="amazon.com"]');
+            if (link) {
+                const href = link.getAttribute('href');
+                const card = link.closest('.product-card');
+                const title = card?.querySelector('.product-title')?.textContent || 'Unknown';
+                const priceText = card?.querySelector('.product-price')?.textContent || '0';
+                const price = parseFloat(priceText.replace('$', '').replace(',', ''));
+                
+                // Event GA4 standardisé pour clicks Amazon
+                gtag('event', 'click_amazon', {
+                    'event_category': 'outbound',
+                    'event_label': title.trim(),
+                    'product_name': title.trim(),
+                    'price': price,
+                    'value': price,
+                    'link_url': href,
+                    'link_domain': 'amazon.com'
+                });
+                
+                // Aussi envoyer comme outbound_click (standard GA4)
+                gtag('event', 'outbound_click', {
+                    'link_url': href,
+                    'link_domain': 'amazon.com',
+                    'outbound': true
+                });
+            }
+        });
+        
+        // Track page engagement
+        let engagementTimer = 0;
+        setInterval(function() {
+            engagementTimer += 10;
+            if (engagementTimer % 30 === 0) {  // Tous les 30s
+                gtag('event', 'user_engagement', {
+                    'engagement_time_msec': engagementTimer * 1000
+                });
+            }
+        }, 10000);
+    </script>
+    
     <style>
         
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
@@ -1140,9 +1196,9 @@ header .signature-aptive {
                     <h1>Gigabyte GeForce RTX 4080 Super WINDFORCE V2 Graphics Card - 2550MHz Core, 16GB GDDR6X 23000MHz 256-bit Memory, PCI-E 4.0, 3X DP 1.4, 1x HDMI 2.1a, NVIDIA DLSS 3.5, GV-N408SWF3V2-16GD</h1>
                     <div class="product-rating">⭐ 4.5 (0 avis)</div>
                     
+                    <div class="recommendation-badge-detail excellent">⭐ Excellent rapport <span class="score">7.8/10</span></div>
                     
-                    
-                    <div class="score-analysis"><strong>Option Basique :</strong> bon pour budgets serrés.</div>
+                    <div class="score-analysis"><strong>Excellent Rapport :</strong> GPU moderne + bien noté (4.5★).</div>
                     
                     <div class="why-score">
                         Pourquoi ce score ? <a href="methodology_fr.html">En savoir plus</a>
@@ -1153,7 +1209,7 @@ header .signature-aptive {
         'event_label': 'Gigabyte GeForce RTX 4080 Super WINDFORCE V2 Graphics Card - 2550MHz Core, 16GB GDDR6X 23000MHz 256-bit Memory, PCI-E 4.0, 3X DP 1.4, 1x HDMI 2.1a, NVIDIA DLSS 3.5, GV-N408SWF3V2-16GD',
         'product_name': 'Gigabyte GeForce RTX 4080 Super WINDFORCE V2 Graphics Card - 2550MHz Core, 16GB GDDR6X 23000MHz 256-bit Memory, PCI-E 4.0, 3X DP 1.4, 1x HDMI 2.1a, NVIDIA DLSS 3.5, GV-N408SWF3V2-16GD',
         'price': 1297.04,
-        'score': 0.1,
+        'score': 7.8,
         'value': 1297.04
     });">🛒 Voir sur Amazon - Expédition Rapide</a>
                 </div>

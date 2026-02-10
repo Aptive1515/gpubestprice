@@ -8,25 +8,25 @@
     <!-- Primary Meta Tags -->
     <meta name="title" content="RAM Price Check - Find the best DDR5 RAM prices • Real-time comparison • Updated automatically">
     <meta name="description" content="Find the best DDR5 RAM prices • Real-time comparison • Updated automatically">
-    <meta name="keywords" content="DDR5 RAM, RAM prices, memory comparison, RAM Price Check - Find the best DDR5 RAM prices • Real-time comparison • Updated automatically">
-    <meta name="author" content="Best GPU Prices">
+    <meta name="keywords" content="GPU prices, graphics card comparison, RTX, Radeon, RAM Price Check - Find the best DDR5 RAM prices • Real-time comparison • Updated automatically">
+    <meta name="author" content="GPU Best Price">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://bestgpuprices.com">
+    <link rel="canonical" href="https://gpubestprice.com">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bestgpuprices.com">
+    <meta property="og:url" content="https://gpubestprice.com">
     <meta property="og:title" content="RAM Price Check - Find the best DDR5 RAM prices • Real-time comparison • Updated automatically">
     <meta property="og:description" content="Find the best DDR5 RAM prices • Real-time comparison • Updated automatically">
-    <meta property="og:image" content="https://bestgpuprices.com/assets/images/og-image.png">
-    <meta property="og:site_name" content="Best GPU Prices">
+    <meta property="og:image" content="https://gpubestprice.com/assets/images/og-image.png">
+    <meta property="og:site_name" content="GPU Best Price">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://bestgpuprices.com">
+    <meta property="twitter:url" content="https://gpubestprice.com">
     <meta property="twitter:title" content="RAM Price Check - Find the best DDR5 RAM prices • Real-time comparison • Updated automatically">
     <meta property="twitter:description" content="Find the best DDR5 RAM prices • Real-time comparison • Updated automatically">
-    <meta property="twitter:image" content="https://bestgpuprices.com/assets/images/og-image.png">
+    <meta property="twitter:image" content="https://gpubestprice.com/assets/images/og-image.png">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
@@ -42,14 +42,70 @@
         'pageType': 'index',
         'totalProducts': 64,
         'topRatedPrice': '268.10',
-        'topRatedScore': '0.1063036180529653',
-        'bestValuePrice': 'N/A',
-        'bestValueScore': '0',
+        'topRatedScore': '10.0',
+        'bestValuePrice': '180.38',
+        'bestValueScore': '10.0',
         'language': 'en'
     });
     </script>
     
-    <!-- Google Analytics: Add your ID in config.py -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF473SL0B8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Configuration GA4 avec enhanced measurement
+        gtag('config', 'G-PF473SL0B8', {
+            'send_page_view': true,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': true
+        });
+        
+        // Track outbound links (Amazon clicks)
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href*="amazon.com"]');
+            if (link) {
+                const href = link.getAttribute('href');
+                const card = link.closest('.product-card');
+                const title = card?.querySelector('.product-title')?.textContent || 'Unknown';
+                const priceText = card?.querySelector('.product-price')?.textContent || '0';
+                const price = parseFloat(priceText.replace('$', '').replace(',', ''));
+                
+                // Event GA4 standardisé pour clicks Amazon
+                gtag('event', 'click_amazon', {
+                    'event_category': 'outbound',
+                    'event_label': title.trim(),
+                    'product_name': title.trim(),
+                    'price': price,
+                    'value': price,
+                    'link_url': href,
+                    'link_domain': 'amazon.com'
+                });
+                
+                // Aussi envoyer comme outbound_click (standard GA4)
+                gtag('event', 'outbound_click', {
+                    'link_url': href,
+                    'link_domain': 'amazon.com',
+                    'outbound': true
+                });
+            }
+        });
+        
+        // Track page engagement
+        let engagementTimer = 0;
+        setInterval(function() {
+            engagementTimer += 10;
+            if (engagementTimer % 30 === 0) {  // Tous les 30s
+                gtag('event', 'user_engagement', {
+                    'engagement_time_msec': engagementTimer * 1000
+                });
+            }
+        }, 10000);
+    </script>
+    
     <style>
         
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
@@ -1314,7 +1370,7 @@ header .signature-aptive {
             <div class="nav-container">
                 <a href="/" class="logo">
                     <span class="logo-icon">💰</span>
-                    <span>Best GPU Prices</span>
+                    <span>GPU Best Price</span>
                 </a>
                 <div class="nav-links">
                     <a href="#deals">Deals</a>
@@ -1375,7 +1431,7 @@ header .signature-aptive {
         
         <div class="update-time">
             <span>⏰</span>
-            <span>Last updated: 2026-02-08 20:13 UTC</span>
+            <span>Last updated: 2026-02-10 02:28 UTC</span>
         </div>
     </header>
     
@@ -1384,16 +1440,22 @@ header .signature-aptive {
         <!-- How We Rate Section (Compact) -->
         <div class="rating-explanation-compact">
             <span class="rating-emoji">🧠</span>
-            <strong>Our Rating:</strong> Score = (Capacity/Price) × DDR5 (+30%) × Speed (+15%) × Relevance (32GB sweet spot)
+            <strong>Our Rating:</strong> Score = (VRAM × Cores × Clock / Price) × Architecture (+20%) × Ray Tracing
             <a href="methodology_en.html" class="learn-more">Learn more</a>
         </div>
         
         <div class="hero-deals" id="deals">
             
         <div class="deal-highlight best">
-            <h3>🏆 Top Rated (0.1063036180529653/10)</h3>
+            <h3>🏆 Top Rated (10.0/10)</h3>
             <div class="deal-price">$268.10</div>
             <p>ASUS Dual GeForce RTX™ 5060 8GB GDDR7 OC Edition (PCIe 5.0, ...</p>
+        </div>
+        
+        <div class="deal-highlight value">
+            <h3>⚖️ Best Value (10.0/10)</h3>
+            <div class="deal-price">$180.38</div>
+            <p>ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Grap...</p>
         </div>
         
         </div>
@@ -1424,146 +1486,146 @@ header .signature-aptive {
         
         <div class="products-grid">
             
-        <div class="product-card" data-type="ddr" data-size="?" data-price="540.75" data-rating="4.7" data-score="0.06467816920943135">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="540.75" data-rating="4.7" data-score="7.761380305131762">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/71liIYrRmkL._AC_UY218_.jpg" alt="GIGABYTE GeForce RTX 4070 WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N4070WF3OC-12GD Video Card" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">GIGABYTE GeForce RTX 4070 WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N4070WF3OC-12GD Video Card</h3>
             <div class="product-price">$540.75</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">7.8/10</span></div>
+            <div class="score-analysis"><strong>Excellent Value:</strong> modern GPU + well-rated (4.7★) + good price point.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/Gigabyte-GeForce-WINDFORCE-Graphics-GV-N4070WF3OC-12GD/dp/B0BZHCQ6PF/ref=sr_1_1?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'GIGABYTE GeForce RTX 4070 WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N4070WF3OC-12GD Video Card',
         'product_name': 'GIGABYTE GeForce RTX 4070 WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N4070WF3OC-12GD Video Card',
         'price': 540.75,
-        'score': 0.1,
+        'score': 7.8,
         'value': 540.75
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-gigabyte-geforce-rtx-4070-windforce-oc-12g-graphics-card-3x-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'GIGABYTE GeForce RTX 4070 WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N4070WF3OC-12GD Video Card'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="8gb" data-price="268.1" data-rating="4.7" data-score="0.1063036180529653">
+        <div class="product-card" data-type="ddr" data-size="8gb" data-price="268.1" data-rating="4.7" data-score="10.0">
             <span class="product-badge best-deal">🏆 Top Rated</span>
             <div class="product-type">DDR 8GB</div>
             <img src="https://m.media-amazon.com/images/I/81i5KcFKysL._AC_UY218_.jpg" alt="ASUS Dual GeForce RTX™ 5060 8GB GDDR7 OC Edition (PCIe 5.0, 8GB GDDR7, DLSS 4, HDMI 2.1b, DisplayPort 2.1b, 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, and More)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS Dual GeForce RTX™ 5060 8GB GDDR7 OC Edition (PCIe 5.0, 8GB GDDR7, DLSS 4, HDMI 2.1b, DisplayPort 2.1b, 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, and More)</h3>
             <div class="product-price">$268.10</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge top">🏆 Our Top Choice <span class="score">10.0/10</span></div>
+            <div class="score-analysis"><strong>Outstanding Choice:</strong> top-rated (4.7★) + competitive price.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-DisplayPort-2-5-Slot-Axial-tech-Technology/dp/B0F8PR9L3X/ref=sr_1_2?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'ASUS Dual GeForce RTX™ 5060 8GB GDDR7 OC Edition (PCIe 5.0, 8GB GDDR7, DLSS 4, HDMI 2.1b, DisplayPort 2.1b, 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, and More)',
         'product_name': 'ASUS Dual GeForce RTX™ 5060 8GB GDDR7 OC Edition (PCIe 5.0, 8GB GDDR7, DLSS 4, HDMI 2.1b, DisplayPort 2.1b, 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, and More)',
         'price': 268.1,
-        'score': 0.1,
+        'score': 10.0,
         'value': 268.1
-    });;">🛒 View on Amazon - Fast Delivery</a>
+    });;">🛒 Buy Now - Free Shipping</a>
                 <a href="gpu-asus-dual-geforce-rtx-5060-8gb-gddr7-oc-edition-pcie-50-8gb-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS Dual GeForce RTX™ 5060 8GB GDDR7 OC Edition (PCIe 5.0, 8GB GDDR7, DLSS 4, HDMI 2.1b, DisplayPort 2.1b, 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, and More)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="722.82" data-rating="4.7" data-score="0.062256163360172645">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="722.82" data-rating="4.7" data-score="7.470739603220718">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/81S9fi6ViFL._AC_UY218_.jpg" alt="ASUS The SFF-Ready Prime GeForce RTX™ 5070 OC Edition 12GB GDDR7 Graphics Card (PCIe® 5.0, 12GB GDDR7, HDMI®/DP 2.1, 2.5-Slot, Axial-tech Fans, Dual BIOS)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS The SFF-Ready Prime GeForce RTX™ 5070 OC Edition 12GB GDDR7 Graphics Card (PCIe® 5.0, 12GB GDDR7, HDMI®/DP 2.1, 2.5-Slot, Axial-tech Fans, Dual BIOS)</h3>
             <div class="product-price">$722.82</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">7.5/10</span></div>
+            <div class="score-analysis"><strong>Solid Pick:</strong> affordable pricing + decent rating (4.7★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-SFF-Ready-Graphics-2-5-Slot-Axial-tech/dp/B0DS6WPTLL/ref=sr_1_3?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'ASUS The SFF-Ready Prime GeForce RTX™ 5070 OC Edition 12GB GDDR7 Graphics Card (PCIe® 5.0, 12GB GDDR7, HDMI®/DP 2.1, 2.5-Slot, Axial-tech Fans, Dual BIOS)',
         'product_name': 'ASUS The SFF-Ready Prime GeForce RTX™ 5070 OC Edition 12GB GDDR7 Graphics Card (PCIe® 5.0, 12GB GDDR7, HDMI®/DP 2.1, 2.5-Slot, Axial-tech Fans, Dual BIOS)',
         'price': 722.82,
-        'score': 0.1,
+        'score': 7.5,
         'value': 722.82
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-asus-the-sff-ready-prime-geforce-rtx-5070-oc-edition-12gb-gd-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS The SFF-Ready Prime GeForce RTX™ 5070 OC Edition 12GB GDDR7 Graphics Card (PCIe® 5.0, 12GB GDDR7, HDMI®/DP 2.1, 2.5-Slot, Axial-tech Fans, Dual BIOS)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="549.21" data-rating="4.7" data-score="0.06368187032282735">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="549.21" data-rating="4.7" data-score="7.64182443873928">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/81PChIf5pwL._AC_UY218_.jpg" alt="ASUS Dual GeForce RTX™ 4070 Super EVO OC Edition 12GB GDDR6X (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1a, DisplayPort 1.4a, 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, and More)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS Dual GeForce RTX™ 4070 Super EVO OC Edition 12GB GDDR6X (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1a, DisplayPort 1.4a, 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, and More)</h3>
             <div class="product-price">$549.21</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">7.6/10</span></div>
+            <div class="score-analysis"><strong>Excellent Value:</strong> well-rated (4.7★) + good price point.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-DisplayPort-2-5-slot-Axial-tech-technology/dp/B0CVCKX2GD/ref=sr_1_4?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'ASUS Dual GeForce RTX™ 4070 Super EVO OC Edition 12GB GDDR6X (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1a, DisplayPort 1.4a, 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, and More)',
         'product_name': 'ASUS Dual GeForce RTX™ 4070 Super EVO OC Edition 12GB GDDR6X (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1a, DisplayPort 1.4a, 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, and More)',
         'price': 549.21,
-        'score': 0.1,
+        'score': 7.6,
         'value': 549.21
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-asus-dual-geforce-rtx-4070-super-evo-oc-edition-12gb-gddr6x-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS Dual GeForce RTX™ 4070 Super EVO OC Edition 12GB GDDR6X (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1a, DisplayPort 1.4a, 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, and More)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="8gb" data-price="456.81" data-rating="4.7" data-score="0.0623891771195902">
+        <div class="product-card" data-type="ddr" data-size="8gb" data-price="456.81" data-rating="4.7" data-score="7.486701254350823">
             
             <div class="product-type">DDR 8GB</div>
             <img src="https://m.media-amazon.com/images/I/81mJlI7yz5L._AC_UY218_.jpg" alt="ASUS TUF Gaming GeForce RTX ™ 5060 Ti 8GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.1-Slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS TUF Gaming GeForce RTX ™ 5060 Ti 8GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.1-Slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)</h3>
             <div class="product-price">$456.81</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">7.5/10</span></div>
+            <div class="score-analysis"><strong>Solid Pick:</strong> affordable pricing + decent rating (4.7★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-Military-Grade-Components-Protective-axial-tech/dp/B0F4RRQ2WY/ref=sr_1_5?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'ASUS TUF Gaming GeForce RTX ™ 5060 Ti 8GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.1-Slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)',
         'product_name': 'ASUS TUF Gaming GeForce RTX ™ 5060 Ti 8GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.1-Slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)',
         'price': 456.81,
-        'score': 0.1,
+        'score': 7.5,
         'value': 456.81
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-asus-tuf-gaming-geforce-rtx-5060-ti-8gb-gddr7-oc-edition-gam-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS TUF Gaming GeForce RTX ™ 5060 Ti 8GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.1-Slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="496.76" data-rating="4.7" data-score="0.0704056687333924">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="496.76" data-rating="4.7" data-score="8.448680248007086">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/81rryZLBohL._AC_UY218_.jpg" alt="ASUS Dual GeForce RTX™ 4070 EVO OC Edition 12GB GDDR6X is Designed for Broad Compatibility, with a 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, Auto-Extreme Technology, and More" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS Dual GeForce RTX™ 4070 EVO OC Edition 12GB GDDR6X is Designed for Broad Compatibility, with a 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, Auto-Extreme Technology, and More</h3>
             <div class="product-price">$496.76</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge top">🏆 Our Top Choice <span class="score">8.4/10</span></div>
+            <div class="score-analysis"><strong>Excellent Value:</strong> well-rated (4.7★) + good price point.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-Compatibility-Axial-tech-Technology-Auto-Extreme/dp/B0CQRX9HPK/ref=sr_1_6?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'ASUS Dual GeForce RTX™ 4070 EVO OC Edition 12GB GDDR6X is Designed for Broad Compatibility, with a 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, Auto-Extreme Technology, and More',
         'product_name': 'ASUS Dual GeForce RTX™ 4070 EVO OC Edition 12GB GDDR6X is Designed for Broad Compatibility, with a 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, Auto-Extreme Technology, and More',
         'price': 496.76,
-        'score': 0.1,
+        'score': 8.4,
         'value': 496.76
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-asus-dual-geforce-rtx-4070-evo-oc-edition-12gb-gddr6x-is-des-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS Dual GeForce RTX™ 4070 EVO OC Edition 12GB GDDR6X is Designed for Broad Compatibility, with a 2.5-Slot Design, Axial-tech Fan Design, 0dB Technology, Auto-Extreme Technology, and More'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="960.77" data-rating="4.7" data-score="0.04683743247603485">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="960.77" data-rating="4.7" data-score="5.620491897124181">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/815-M4vy8JL._AC_UY218_.jpg" alt="ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)</h3>
             <div class="product-price">$960.77</div>
             
-            
+            <div class="recommendation-badge good">✓ Good Choice <span class="score">5.6/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-3-125-slot-Military-Grade-Components-Protective/dp/B0DS6S98ZF/ref=sr_1_7?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -1571,75 +1633,75 @@ header .signature-aptive {
         'event_label': 'ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)',
         'product_name': 'ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)',
         'price': 960.77,
-        'score': 0.0,
+        'score': 5.6,
         'value': 960.77
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-asus-tuf-gaming-geforce-rtx-5070-12gb-gddr7-oc-edition-gamin-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="608.43" data-rating="4.6" data-score="0.05748355603767073">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="608.43" data-rating="4.6" data-score="6.89802672452049">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/71qIJjDVfzL._AC_UY218_.jpg" alt="GIGABYTE GeForce RTX 4070 Super WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N407SWF3OC-12GD Video Card" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">GIGABYTE GeForce RTX 4070 Super WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N407SWF3OC-12GD Video Card</h3>
             <div class="product-price">$608.43</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">6.9/10</span></div>
+            <div class="score-analysis"><strong>Solid Pick:</strong> modern + decent rating (4.6★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/GIGABYTE-GeForce-WINDFORCE-Graphics-GV-N407SWF3OC-12GD/dp/B0CSJV61BN/ref=sr_1_8?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'GIGABYTE GeForce RTX 4070 Super WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N407SWF3OC-12GD Video Card',
         'product_name': 'GIGABYTE GeForce RTX 4070 Super WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N407SWF3OC-12GD Video Card',
         'price': 608.43,
-        'score': 0.1,
+        'score': 6.9,
         'value': 608.43
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-gigabyte-geforce-rtx-4070-super-windforce-oc-12g-graphics-ca-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'GIGABYTE GeForce RTX 4070 Super WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N407SWF3OC-12GD Video Card'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="549.21" data-rating="4.7" data-score="0.06368187032282735">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="549.21" data-rating="4.7" data-score="7.64182443873928">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/81cl8Wsp0uL._AC_UY218_.jpg" alt="ASUS Dual GeForce RTX 4070 Super OC Edition Graphics Card (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1, DisplayPort 1.4a, 2.56-Slot Design, Axial-tech Fan Design, Auto-Extreme Technology, and More)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS Dual GeForce RTX 4070 Super OC Edition Graphics Card (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1, DisplayPort 1.4a, 2.56-Slot Design, Axial-tech Fan Design, Auto-Extreme Technology, and More)</h3>
             <div class="product-price">$549.21</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">7.6/10</span></div>
+            <div class="score-analysis"><strong>Excellent Value:</strong> modern GPU + well-rated (4.7★) + good price point.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-DisplayPort-Axial-tech-Auto-Extreme-Technology/dp/B0CQPYSF1V/ref=sr_1_9?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'ASUS Dual GeForce RTX 4070 Super OC Edition Graphics Card (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1, DisplayPort 1.4a, 2.56-Slot Design, Axial-tech Fan Design, Auto-Extreme Technology, and More)',
         'product_name': 'ASUS Dual GeForce RTX 4070 Super OC Edition Graphics Card (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1, DisplayPort 1.4a, 2.56-Slot Design, Axial-tech Fan Design, Auto-Extreme Technology, and More)',
         'price': 549.21,
-        'score': 0.1,
+        'score': 7.6,
         'value': 549.21
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-asus-dual-geforce-rtx-4070-super-oc-edition-graphics-card-pc-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS Dual GeForce RTX 4070 Super OC Edition Graphics Card (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1, DisplayPort 1.4a, 2.56-Slot Design, Axial-tech Fan Design, Auto-Extreme Technology, and More)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="557.49" data-rating="4.6" data-score="0.08071893666254103">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="557.49" data-rating="4.6" data-score="9.686272399504924">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/61E+0EA9nSL._AC_UY218_.jpg" alt="PNY NVIDIA GeForce RTX™ 5070 Epic-X™ ARGB OC Triple Fan, Graphics Card (12GB GDDR7, 192-bit, Boost Speed: 2685 MHz, SFF-Ready, PCIe® 5.0, HDMI®/DP 2.1, 2.4-Slot, Blackwell Architecture, DLSS 4)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">PNY NVIDIA GeForce RTX™ 5070 Epic-X™ ARGB OC Triple Fan, Graphics Card (12GB GDDR7, 192-bit, Boost Speed: 2685 MHz, SFF-Ready, PCIe® 5.0, HDMI®/DP 2.1, 2.4-Slot, Blackwell Architecture, DLSS 4)</h3>
             <div class="product-price">$557.49</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge top">🏆 Our Top Choice <span class="score">9.7/10</span></div>
+            <div class="score-analysis"><strong>Outstanding Choice:</strong> top-rated (4.6★) + competitive price.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/PNY-Overclocked-Graphics-2-4-Slot-Epic-XTM/dp/B0DYPGBX6J/ref=sr_1_10?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'PNY NVIDIA GeForce RTX™ 5070 Epic-X™ ARGB OC Triple Fan, Graphics Card (12GB GDDR7, 192-bit, Boost Speed: 2685 MHz, SFF-Ready, PCIe® 5.0, HDMI®/DP 2.1, 2.4-Slot, Blackwell Architecture, DLSS 4)',
         'product_name': 'PNY NVIDIA GeForce RTX™ 5070 Epic-X™ ARGB OC Triple Fan, Graphics Card (12GB GDDR7, 192-bit, Boost Speed: 2685 MHz, SFF-Ready, PCIe® 5.0, HDMI®/DP 2.1, 2.4-Slot, Blackwell Architecture, DLSS 4)',
         'price': 557.49,
-        'score': 0.1,
+        'score': 9.7,
         'value': 557.49
-    });;">🛒 View on Amazon - Fast Delivery</a>
+    });;">🛒 Buy Now - Free Shipping</a>
                 <a href="gpu-pny-nvidia-geforce-rtx-5070-epic-x-argb-oc-triple-fan-graphi-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'PNY NVIDIA GeForce RTX™ 5070 Epic-X™ ARGB OC Triple Fan, Graphics Card (12GB GDDR7, 192-bit, Boost Speed: 2685 MHz, SFF-Ready, PCIe® 5.0, HDMI®/DP 2.1, 2.4-Slot, Blackwell Architecture, DLSS 4)'});">📊 View Full Specs & History</a>
             </div>
         </div>
@@ -1651,7 +1713,7 @@ header .signature-aptive {
             <h3 class="product-title">PowerColor</h3>
             <div class="product-price">$422.32</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/PowerColor-Twin-Radeon-7800-GDDR6/dp/B0DQF23NLJ/ref=sr_1_1?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -1673,7 +1735,7 @@ header .signature-aptive {
             <h3 class="product-title">ASRock</h3>
             <div class="product-price">$506.92</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASRock-Challenger-RX7800XT-16GO-GDDR6-90-GA4SZZ-00UANF/dp/B0CHK3929K/ref=sr_1_2?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -1695,7 +1757,7 @@ header .signature-aptive {
             <h3 class="product-title">GIGABYTE</h3>
             <div class="product-price">$539.06</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/Gigabyte-Radeon-7800-Gaming-Graphics/dp/B0CGRMJF6C/ref=sr_1_3?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -1717,7 +1779,7 @@ header .signature-aptive {
             <h3 class="product-title">PowerColor</h3>
             <div class="product-price">$507.57</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/PowerColor-Hellhound-Radeon-GDDR6-Graphics/dp/B0CFPJY54Q/ref=sr_1_4?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -1739,7 +1801,7 @@ header .signature-aptive {
             <h3 class="product-title">GIGABYTE</h3>
             <div class="product-price">$530.60</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/GIGABYTE-Graphics-WINDFORCE-GV-R78XTGAMING-OC-16GD/dp/B0CGHQ32S2/ref=sr_1_5?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -1761,7 +1823,7 @@ header .signature-aptive {
             <h3 class="product-title">XFX</h3>
             <div class="product-price">$558.29</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/XFX-Radeon-7900XT-Graphics-RX-79TMBABF9/dp/B0BNLSDRKB/ref=sr_1_6?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -1783,7 +1845,7 @@ header .signature-aptive {
             <h3 class="product-title">Sapphire</h3>
             <div class="product-price">$506.92</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/Sapphire-11330-02-20G-Radeon-Gaming-Graphics/dp/B0CFWM1LNH/ref=sr_1_8?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -1805,7 +1867,7 @@ header .signature-aptive {
             <h3 class="product-title">ASUS</h3>
             <div class="product-price">$960.77</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-3-125-slot-Military-Grade-Components-Protective/dp/B0DS6S98ZF/ref=sr_1_9?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -1827,7 +1889,7 @@ header .signature-aptive {
             <h3 class="product-title">GIGABYTE</h3>
             <div class="product-price">$464.62</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/GIGABYTE-Graphics-WINDFORCE-GV-R77XTGAMING-OC-12GD/dp/B0CGC5P7H3/ref=sr_1_10?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -1842,58 +1904,58 @@ header .signature-aptive {
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="16gb" data-price="963.55" data-rating="4.6" data-score="0.08795634476674796">
+        <div class="product-card" data-type="ddr" data-size="16gb" data-price="963.55" data-rating="4.6" data-score="10.0">
             
             <div class="product-type">DDR 16GB</div>
             <img src="https://m.media-amazon.com/images/I/71vQnBuZ3yL._AC_UY218_.jpg" alt="ASUS TUF Gaming GeForce RTX® 4080 OC Edition Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS TUF Gaming GeForce RTX® 4080 OC Edition Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)</h3>
             <div class="product-price">$963.55</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge top">🏆 Our Top Choice <span class="score">10.0/10</span></div>
+            <div class="score-analysis"><strong>Outstanding Choice:</strong> top-rated (4.6★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-Gaming-GeForce-Graphics-DisplayPort/dp/B0BLGQHS53/ref=sr_1_1?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'ASUS TUF Gaming GeForce RTX® 4080 OC Edition Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)',
         'product_name': 'ASUS TUF Gaming GeForce RTX® 4080 OC Edition Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)',
         'price': 963.55,
-        'score': 0.1,
+        'score': 10.0,
         'value': 963.55
-    });;">🛒 View on Amazon - Fast Delivery</a>
+    });;">🛒 Buy Now - Free Shipping</a>
                 <a href="gpu-asus-tuf-gaming-geforce-rtx-4080-oc-edition-graphics-card-pc-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS TUF Gaming GeForce RTX® 4080 OC Edition Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1297.04" data-rating="4.5" data-score="0.06534134336643435">
+        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1297.04" data-rating="4.5" data-score="7.840961203972121">
             
             <div class="product-type">DDR 16GB</div>
             <img src="https://m.media-amazon.com/images/I/61tyM2UpXaL._AC_UY218_.jpg" alt="Gigabyte GeForce RTX 4080 Super WINDFORCE V2 Graphics Card - 2550MHz Core, 16GB GDDR6X 23000MHz 256-bit Memory, PCI-E 4.0, 3X DP 1.4, 1x HDMI 2.1a, NVIDIA DLSS 3.5, GV-N408SWF3V2-16GD" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">Gigabyte GeForce RTX 4080 Super WINDFORCE V2 Graphics Card - 2550MHz Core, 16GB GDDR6X 23000MHz 256-bit Memory, PCI-E 4.0, 3X DP 1.4, 1x HDMI 2.1a, NVIDIA DLSS 3.5, GV-N408SWF3V2-16GD</h3>
             <div class="product-price">$1297.04</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">7.8/10</span></div>
+            <div class="score-analysis"><strong>Excellent Value:</strong> modern GPU + well-rated (4.5★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/Gigabyte-GeForce-SUPER-WINDFORCE-Graphics/dp/B0CQTN1CQH/ref=sr_1_2?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'Gigabyte GeForce RTX 4080 Super WINDFORCE V2 Graphics Card - 2550MHz Core, 16GB GDDR6X 23000MHz 256-bit Memory, PCI-E 4.0, 3X DP 1.4, 1x HDMI 2.1a, NVIDIA DLSS 3.5, GV-N408SWF3V2-16GD',
         'product_name': 'Gigabyte GeForce RTX 4080 Super WINDFORCE V2 Graphics Card - 2550MHz Core, 16GB GDDR6X 23000MHz 256-bit Memory, PCI-E 4.0, 3X DP 1.4, 1x HDMI 2.1a, NVIDIA DLSS 3.5, GV-N408SWF3V2-16GD',
         'price': 1297.04,
-        'score': 0.1,
+        'score': 7.8,
         'value': 1297.04
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-gigabyte-geforce-rtx-4080-super-windforce-v2-graphics-card-2-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'Gigabyte GeForce RTX 4080 Super WINDFORCE V2 Graphics Card - 2550MHz Core, 16GB GDDR6X 23000MHz 256-bit Memory, PCI-E 4.0, 3X DP 1.4, 1x HDMI 2.1a, NVIDIA DLSS 3.5, GV-N408SWF3V2-16GD'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="960.77" data-rating="4.7" data-score="0.04683743247603485">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="960.77" data-rating="4.7" data-score="5.620491897124181">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/815-M4vy8JL._AC_UY218_.jpg" alt="ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)</h3>
             <div class="product-price">$960.77</div>
             
-            
+            <div class="recommendation-badge good">✓ Good Choice <span class="score">5.6/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-3-125-slot-Military-Grade-Components-Protective/dp/B0DS6S98ZF/ref=sr_1_3?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -1901,175 +1963,175 @@ header .signature-aptive {
         'event_label': 'ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)',
         'product_name': 'ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)',
         'price': 960.77,
-        'score': 0.0,
+        'score': 5.6,
         'value': 960.77
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-asus-tuf-gaming-geforce-rtx-5070-12gb-gddr7-oc-edition-gamin-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1125.13" data-rating="4.6" data-score="0.0753249277861225">
+        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1125.13" data-rating="4.6" data-score="9.0389913343347">
             
             <div class="product-type">DDR 16GB</div>
             <img src="https://m.media-amazon.com/images/I/71stHfUBHXL._AC_UY218_.jpg" alt="ASUS ROG Strix GeForce RTX® 4080 OC Edition Gaming Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS ROG Strix GeForce RTX® 4080 OC Edition Gaming Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)</h3>
             <div class="product-price">$1125.13</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge top">🏆 Our Top Choice <span class="score">9.0/10</span></div>
+            <div class="score-analysis"><strong>Outstanding Choice:</strong> top-rated (4.6★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-GeForce-Gaming-Graphics-DisplayPort/dp/B0BLFTWYLZ/ref=sr_1_5?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'ASUS ROG Strix GeForce RTX® 4080 OC Edition Gaming Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)',
         'product_name': 'ASUS ROG Strix GeForce RTX® 4080 OC Edition Gaming Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)',
         'price': 1125.13,
-        'score': 0.1,
+        'score': 9.0,
         'value': 1125.13
-    });;">🛒 View on Amazon - Fast Delivery</a>
+    });;">🛒 Buy Now - Free Shipping</a>
                 <a href="gpu-asus-rog-strix-geforce-rtx-4080-oc-edition-gaming-graphics-c-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS ROG Strix GeForce RTX® 4080 OC Edition Gaming Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1165.07" data-rating="4.8" data-score="0.05664895671504716">
+        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1165.07" data-rating="4.8" data-score="6.797874805805661">
             
             <div class="product-type">DDR 16GB</div>
             <img src="https://m.media-amazon.com/images/I/71Fy6-Ec5lL._AC_UY218_.jpg" alt="GIGABYTE GeForce RTX 5080 WINDFORCE SFF 16G Graphics Card, 16GB 256-bit GDDR7, PCIe 5.0, WINDFORCE Cooling System, GV-N5080WF3-16GD Video Card" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">GIGABYTE GeForce RTX 5080 WINDFORCE SFF 16G Graphics Card, 16GB 256-bit GDDR7, PCIe 5.0, WINDFORCE Cooling System, GV-N5080WF3-16GD Video Card</h3>
             <div class="product-price">$1165.07</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">6.8/10</span></div>
+            <div class="score-analysis"><strong>Solid Pick:</strong> modern + decent rating (4.8★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/GIGABYTE-GeForce-WINDFORCE-Graphics-GV-N5080WF3-16GD/dp/B0DXWKQN7J/ref=sr_1_6?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'GIGABYTE GeForce RTX 5080 WINDFORCE SFF 16G Graphics Card, 16GB 256-bit GDDR7, PCIe 5.0, WINDFORCE Cooling System, GV-N5080WF3-16GD Video Card',
         'product_name': 'GIGABYTE GeForce RTX 5080 WINDFORCE SFF 16G Graphics Card, 16GB 256-bit GDDR7, PCIe 5.0, WINDFORCE Cooling System, GV-N5080WF3-16GD Video Card',
         'price': 1165.07,
-        'score': 0.1,
+        'score': 6.8,
         'value': 1165.07
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-gigabyte-geforce-rtx-5080-windforce-sff-16g-graphics-card-16-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'GIGABYTE GeForce RTX 5080 WINDFORCE SFF 16G Graphics Card, 16GB 256-bit GDDR7, PCIe 5.0, WINDFORCE Cooling System, GV-N5080WF3-16GD Video Card'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1014.49" data-rating="4.5" data-score="0.08353984366528995">
+        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1014.49" data-rating="4.5" data-score="10.0">
             
             <div class="product-type">DDR 16GB</div>
             <img src="https://m.media-amazon.com/images/I/61pbe4Kqx4L._AC_UY218_.jpg" alt="PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3</h3>
             <div class="product-price">$1014.49</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge top">🏆 Our Top Choice <span class="score">10.0/10</span></div>
+            <div class="score-analysis"><strong>Outstanding Choice:</strong> top-rated (4.5★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/PNY-GeForce-RTXTM-4080-Triple-Graphics/dp/B0BKGWJRFF/ref=sr_1_7?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3',
         'product_name': 'PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3',
         'price': 1014.49,
-        'score': 0.1,
+        'score': 10.0,
         'value': 1014.49
-    });;">🛒 View on Amazon - Fast Delivery</a>
+    });;">🛒 Buy Now - Free Shipping</a>
                 <a href="gpu-pny-geforce-rtx-4080-16gb-verto-triple-fan-graphics-card-dls-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'PNY GeForce RTX™ 4080 16GB Verto Triple Fan Graphics Card DLSS 3'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1056.79" data-rating="4.3" data-score="0.08019600488271086">
+        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1056.79" data-rating="4.3" data-score="9.623520585925304">
             
             <div class="product-type">DDR 16GB</div>
             <img src="https://m.media-amazon.com/images/I/71kWnNL5NOL._AC_UY218_.jpg" alt="GIGABYTE GeForce RTX 4080 Super AERO OC 16G Graphics Card, 3X WINDFORCE Fans, 16GB 256-bit GDDR6X, GV-N408SAERO OC-16GD Video Card" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">GIGABYTE GeForce RTX 4080 Super AERO OC 16G Graphics Card, 3X WINDFORCE Fans, 16GB 256-bit GDDR6X, GV-N408SAERO OC-16GD Video Card</h3>
             <div class="product-price">$1056.79</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge top">🏆 Our Top Choice <span class="score">9.6/10</span></div>
+            <div class="score-analysis"><strong>Outstanding Choice:</strong> latest architecture.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/GIGABYTE-Graphics-WINDFORCE-GV-N408SAERO-OC-16GD/dp/B0CSKBG4T3/ref=sr_1_8?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'GIGABYTE GeForce RTX 4080 Super AERO OC 16G Graphics Card, 3X WINDFORCE Fans, 16GB 256-bit GDDR6X, GV-N408SAERO OC-16GD Video Card',
         'product_name': 'GIGABYTE GeForce RTX 4080 Super AERO OC 16G Graphics Card, 3X WINDFORCE Fans, 16GB 256-bit GDDR6X, GV-N408SAERO OC-16GD Video Card',
         'price': 1056.79,
-        'score': 0.1,
+        'score': 9.6,
         'value': 1056.79
-    });;">🛒 View on Amazon - Fast Delivery</a>
+    });;">🛒 Buy Now - Free Shipping</a>
                 <a href="gpu-gigabyte-geforce-rtx-4080-super-aero-oc-16g-graphics-card-3x-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'GIGABYTE GeForce RTX 4080 Super AERO OC 16G Graphics Card, 3X WINDFORCE Fans, 16GB 256-bit GDDR6X, GV-N408SAERO OC-16GD Video Card'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1437.47" data-rating="4.7" data-score="0.05895798590579282">
+        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1437.47" data-rating="4.7" data-score="7.0749583086951375">
             
             <div class="product-type">DDR 16GB</div>
             <img src="https://m.media-amazon.com/images/I/71aytYjILTL._AC_UY218_.jpg" alt="MSI GeForce RTX 4080 16GB Gaming X Trio Gaming Graphics Card - 16GB GDDR6X, 2610 MHz, PCI Express Gen 4, 256-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">MSI GeForce RTX 4080 16GB Gaming X Trio Gaming Graphics Card - 16GB GDDR6X, 2610 MHz, PCI Express Gen 4, 256-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR)</h3>
             <div class="product-price">$1437.47</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">7.1/10</span></div>
+            <div class="score-analysis"><strong>Solid Pick:</strong> modern + decent rating (4.7★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/MSI-GeForce-4080-Gaming-Graphics/dp/B0BHDXCXXF/ref=sr_1_9?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'MSI GeForce RTX 4080 16GB Gaming X Trio Gaming Graphics Card - 16GB GDDR6X, 2610 MHz, PCI Express Gen 4, 256-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR)',
         'product_name': 'MSI GeForce RTX 4080 16GB Gaming X Trio Gaming Graphics Card - 16GB GDDR6X, 2610 MHz, PCI Express Gen 4, 256-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR)',
         'price': 1437.47,
-        'score': 0.1,
+        'score': 7.1,
         'value': 1437.47
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-msi-geforce-rtx-4080-16gb-gaming-x-trio-gaming-graphics-card-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'MSI GeForce RTX 4080 16GB Gaming X Trio Gaming Graphics Card - 16GB GDDR6X, 2610 MHz, PCI Express Gen 4, 256-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1243.52" data-rating="4.4" data-score="0.06815357694287186">
+        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1243.52" data-rating="4.4" data-score="8.178429233144621">
             
             <div class="product-type">DDR 16GB</div>
             <img src="https://m.media-amazon.com/images/I/71T2JWJmZHL._AC_UY218_.jpg" alt="GIGABYTE GeForce RTX 4080 Gaming OC 16GB Graphics Card - 16GB DDR6X, 192bit, PCI-E 4.0, Core 2535Mhz, RGB, Anti-sag Bracket, DP 1.4, HDMI 2.1a, NVIDIA DLSS 3, GV-N4080GAMING OC-16GD" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">GIGABYTE GeForce RTX 4080 Gaming OC 16GB Graphics Card - 16GB DDR6X, 192bit, PCI-E 4.0, Core 2535Mhz, RGB, Anti-sag Bracket, DP 1.4, HDMI 2.1a, NVIDIA DLSS 3, GV-N4080GAMING OC-16GD</h3>
             <div class="product-price">$1243.52</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge top">🏆 Our Top Choice <span class="score">8.2/10</span></div>
+            <div class="score-analysis"><strong>Excellent Value:</strong> modern GPU + well-rated (4.4★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/Gigabyte-Gaming-NVIDIA-GeForce-Graphics/dp/B0BLT45YZ1/ref=sr_1_10?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'GIGABYTE GeForce RTX 4080 Gaming OC 16GB Graphics Card - 16GB DDR6X, 192bit, PCI-E 4.0, Core 2535Mhz, RGB, Anti-sag Bracket, DP 1.4, HDMI 2.1a, NVIDIA DLSS 3, GV-N4080GAMING OC-16GD',
         'product_name': 'GIGABYTE GeForce RTX 4080 Gaming OC 16GB Graphics Card - 16GB DDR6X, 192bit, PCI-E 4.0, Core 2535Mhz, RGB, Anti-sag Bracket, DP 1.4, HDMI 2.1a, NVIDIA DLSS 3, GV-N4080GAMING OC-16GD',
         'price': 1243.52,
-        'score': 0.1,
+        'score': 8.2,
         'value': 1243.52
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-gigabyte-geforce-rtx-4080-gaming-oc-16gb-graphics-card-16gb-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'GIGABYTE GeForce RTX 4080 Gaming OC 16GB Graphics Card - 16GB DDR6X, 192bit, PCI-E 4.0, Core 2535Mhz, RGB, Anti-sag Bracket, DP 1.4, HDMI 2.1a, NVIDIA DLSS 3, GV-N4080GAMING OC-16GD'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="2922.98" data-rating="4.3" data-score="0.06592433092255165">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="2922.98" data-rating="4.3" data-score="7.910919710706198">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/81KR0fO8WgL._AC_UY218_.jpg" alt="MSI GeForce RTX 4090 Gaming X Trio 24G Gaming Graphics Card - 24GB GDDR6X, 2595 MHz, PCI Express Gen 4, 384-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">MSI GeForce RTX 4090 Gaming X Trio 24G Gaming Graphics Card - 24GB GDDR6X, 2595 MHz, PCI Express Gen 4, 384-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR)</h3>
             <div class="product-price">$2922.98</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">7.9/10</span></div>
+            <div class="score-analysis"><strong>Excellent Value:</strong> modern GPU + well-rated (4.3★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/MSI-GeForce-Graphics-384-bit-DisplayPort/dp/B09YCLG5PB/ref=sr_1_1?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'MSI GeForce RTX 4090 Gaming X Trio 24G Gaming Graphics Card - 24GB GDDR6X, 2595 MHz, PCI Express Gen 4, 384-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR)',
         'product_name': 'MSI GeForce RTX 4090 Gaming X Trio 24G Gaming Graphics Card - 24GB GDDR6X, 2595 MHz, PCI Express Gen 4, 384-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR)',
         'price': 2922.98,
-        'score': 0.1,
+        'score': 7.9,
         'value': 2922.98
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-msi-geforce-rtx-4090-gaming-x-trio-24g-gaming-graphics-card-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'MSI GeForce RTX 4090 Gaming X Trio 24G Gaming Graphics Card - 24GB GDDR6X, 2595 MHz, PCI Express Gen 4, 384-bit, 3X DP v 1.4a, HDMI 2.1a (Supports 4K & 8K HDR)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="960.77" data-rating="4.7" data-score="0.04683743247603485">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="960.77" data-rating="4.7" data-score="5.620491897124181">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/815-M4vy8JL._AC_UY218_.jpg" alt="ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)</h3>
             <div class="product-price">$960.77</div>
             
-            
+            <div class="recommendation-badge good">✓ Good Choice <span class="score">5.6/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-3-125-slot-Military-Grade-Components-Protective/dp/B0DS6S98ZF/ref=sr_1_2?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2077,87 +2139,87 @@ header .signature-aptive {
         'event_label': 'ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)',
         'product_name': 'ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)',
         'price': 960.77,
-        'score': 0.0,
+        'score': 5.6,
         'value': 960.77
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-asus-tuf-gaming-geforce-rtx-5070-12gb-gddr7-oc-edition-gamin-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS TUF Gaming GeForce RTX ™ 5070 12GB GDDR7 OC Edition Gaming Graphics Card (PCIe® 5.0, HDMI®/DP 2.1, 3.125-slot, Military-Grade Components, Protective PCB Coating, axial-tech Fans)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="2819.77" data-rating="4.6" data-score="0.06833731148285145">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="2819.77" data-rating="4.6" data-score="8.200477377942175">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/71Bi6UsIoIL._AC_UY218_.jpg" alt="ASUS ROG Strix GeForce RTX™ 4090 White OC Edition Gaming Graphics Card (PCIe 4.0, 24GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS ROG Strix GeForce RTX™ 4090 White OC Edition Gaming Graphics Card (PCIe 4.0, 24GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)</h3>
             <div class="product-price">$2819.77</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge top">🏆 Our Top Choice <span class="score">8.2/10</span></div>
+            <div class="score-analysis"><strong>Excellent Value:</strong> well-rated (4.6★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-GeForce-Gaming-Graphics-DisplayPort/dp/B0BSVMLVTD/ref=sr_1_3?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'ASUS ROG Strix GeForce RTX™ 4090 White OC Edition Gaming Graphics Card (PCIe 4.0, 24GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)',
         'product_name': 'ASUS ROG Strix GeForce RTX™ 4090 White OC Edition Gaming Graphics Card (PCIe 4.0, 24GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)',
         'price': 2819.77,
-        'score': 0.1,
+        'score': 8.2,
         'value': 2819.77
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-asus-rog-strix-geforce-rtx-4090-white-oc-edition-gaming-grap-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS ROG Strix GeForce RTX™ 4090 White OC Edition Gaming Graphics Card (PCIe 4.0, 24GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1125.13" data-rating="4.6" data-score="0.0753249277861225">
+        <div class="product-card" data-type="ddr" data-size="16gb" data-price="1125.13" data-rating="4.6" data-score="9.0389913343347">
             
             <div class="product-type">DDR 16GB</div>
             <img src="https://m.media-amazon.com/images/I/71stHfUBHXL._AC_UY218_.jpg" alt="ASUS ROG Strix GeForce RTX® 4080 OC Edition Gaming Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS ROG Strix GeForce RTX® 4080 OC Edition Gaming Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)</h3>
             <div class="product-price">$1125.13</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge top">🏆 Our Top Choice <span class="score">9.0/10</span></div>
+            <div class="score-analysis"><strong>Outstanding Choice:</strong> top-rated (4.6★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-GeForce-Gaming-Graphics-DisplayPort/dp/B0BLFTWYLZ/ref=sr_1_5?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'ASUS ROG Strix GeForce RTX® 4080 OC Edition Gaming Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)',
         'product_name': 'ASUS ROG Strix GeForce RTX® 4080 OC Edition Gaming Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)',
         'price': 1125.13,
-        'score': 0.1,
+        'score': 9.0,
         'value': 1125.13
-    });;">🛒 View on Amazon - Fast Delivery</a>
+    });;">🛒 Buy Now - Free Shipping</a>
                 <a href="gpu-asus-rog-strix-geforce-rtx-4080-oc-edition-gaming-graphics-c-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS ROG Strix GeForce RTX® 4080 OC Edition Gaming Graphics Card (PCIe 4.0, 16GB GDDR6X, HDMI 2.1a, DisplayPort 1.4a)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="972.19" data-rating="4.5" data-score="0.10183194643022456">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="972.19" data-rating="4.5" data-score="10.0">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/81QuOSSvYAS._AC_UY218_.jpg" alt="EVGA GeForce RTX 3090 FTW3 Ultra Gaming, 24GB GDDR6X, iCX3 Technology, ARGB LED, Metal Backplate, 24G-P5-3987-KR" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">EVGA GeForce RTX 3090 FTW3 Ultra Gaming, 24GB GDDR6X, iCX3 Technology, ARGB LED, Metal Backplate, 24G-P5-3987-KR</h3>
             <div class="product-price">$972.19</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge top">🏆 Our Top Choice <span class="score">10.0/10</span></div>
+            <div class="score-analysis"><strong>Outstanding Choice:</strong> top-rated (4.5★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/EVGA-GeForce-Technology-Backplate-24G-P5-3987-KR/dp/B08J5F3G18/ref=sr_1_6?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'EVGA GeForce RTX 3090 FTW3 Ultra Gaming, 24GB GDDR6X, iCX3 Technology, ARGB LED, Metal Backplate, 24G-P5-3987-KR',
         'product_name': 'EVGA GeForce RTX 3090 FTW3 Ultra Gaming, 24GB GDDR6X, iCX3 Technology, ARGB LED, Metal Backplate, 24G-P5-3987-KR',
         'price': 972.19,
-        'score': 0.1,
+        'score': 10.0,
         'value': 972.19
-    });;">🛒 View on Amazon - Fast Delivery</a>
+    });;">🛒 Buy Now - Free Shipping</a>
                 <a href="gpu-evga-geforce-rtx-3090-ftw3-ultra-gaming-24gb-gddr6x-icx3-tec-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'EVGA GeForce RTX 3090 FTW3 Ultra Gaming, 24GB GDDR6X, iCX3 Technology, ARGB LED, Metal Backplate, 24G-P5-3987-KR'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="8gb" data-price="337.72" data-rating="4.7" data-score="0.03266478739784436">
+        <div class="product-card" data-type="ddr" data-size="8gb" data-price="337.72" data-rating="4.7" data-score="3.9197744877413228">
             
             <div class="product-type">DDR 8GB</div>
             <img src="https://m.media-amazon.com/images/I/8196MD83TwL._AC_UY218_.jpg" alt="ASUS ROG Strix GeForce RTX™ 4060 OC Edition Gaming Graphics Card (PCIe 4.0, 8GB GDDR6, DLSS 3, HDMI 2.1a, DisplayPort 1.4a, Axial-tech Fan Design, Aura Sync, 0dB Technology)" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS ROG Strix GeForce RTX™ 4060 OC Edition Gaming Graphics Card (PCIe 4.0, 8GB GDDR6, DLSS 3, HDMI 2.1a, DisplayPort 1.4a, Axial-tech Fan Design, Aura Sync, 0dB Technology)</h3>
             <div class="product-price">$337.72</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">3.9/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-Graphics-DisplayPort-Axial-tech-Technology/dp/B0C7FNSHMQ/ref=sr_1_7?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2165,29 +2227,29 @@ header .signature-aptive {
         'event_label': 'ASUS ROG Strix GeForce RTX™ 4060 OC Edition Gaming Graphics Card (PCIe 4.0, 8GB GDDR6, DLSS 3, HDMI 2.1a, DisplayPort 1.4a, Axial-tech Fan Design, Aura Sync, 0dB Technology)',
         'product_name': 'ASUS ROG Strix GeForce RTX™ 4060 OC Edition Gaming Graphics Card (PCIe 4.0, 8GB GDDR6, DLSS 3, HDMI 2.1a, DisplayPort 1.4a, Axial-tech Fan Design, Aura Sync, 0dB Technology)',
         'price': 337.72,
-        'score': 0.0,
+        'score': 3.9,
         'value': 337.72
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-asus-rog-strix-geforce-rtx-4060-oc-edition-gaming-graphics-c-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS ROG Strix GeForce RTX™ 4060 OC Edition Gaming Graphics Card (PCIe 4.0, 8GB GDDR6, DLSS 3, HDMI 2.1a, DisplayPort 1.4a, Axial-tech Fan Design, Aura Sync, 0dB Technology)'});">📊 View Full Specs & History</a>
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="608.43" data-rating="4.6" data-score="0.05748355603767073">
+        <div class="product-card" data-type="ddr" data-size="?" data-price="608.43" data-rating="4.6" data-score="6.89802672452049">
             
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/71qIJjDVfzL._AC_UY218_.jpg" alt="GIGABYTE GeForce RTX 4070 Super WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N407SWF3OC-12GD Video Card" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">GIGABYTE GeForce RTX 4070 Super WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N407SWF3OC-12GD Video Card</h3>
             <div class="product-price">$608.43</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge excellent">⭐ Excellent Value <span class="score">6.9/10</span></div>
+            <div class="score-analysis"><strong>Solid Pick:</strong> modern + decent rating (4.6★).</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/GIGABYTE-GeForce-WINDFORCE-Graphics-GV-N407SWF3OC-12GD/dp/B0CSJV61BN/ref=sr_1_8?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'GIGABYTE GeForce RTX 4070 Super WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N407SWF3OC-12GD Video Card',
         'product_name': 'GIGABYTE GeForce RTX 4070 Super WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N407SWF3OC-12GD Video Card',
         'price': 608.43,
-        'score': 0.1,
+        'score': 6.9,
         'value': 608.43
     });;">🛒 View on Amazon - Fast Delivery</a>
                 <a href="gpu-gigabyte-geforce-rtx-4070-super-windforce-oc-12g-graphics-ca-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'GIGABYTE GeForce RTX 4070 Super WINDFORCE OC 12G Graphics Card, 3X WINDFORCE Fans, 12GB 192-bit GDDR6X, GV-N407SWF3OC-12GD Video Card'});">📊 View Full Specs & History</a>
@@ -2201,7 +2263,7 @@ header .signature-aptive {
             <h3 class="product-title">ASUS ROG Herculx Graphics Card Holder White Edition (Tool-Free Design, Included Spirit Level, Solid zinc Alloy, 72-128mm, Aura Sync)</h3>
             <div class="product-price">$33</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-ROG-Graphics-Tool-Free-Included/dp/B0DGB5RLLV/ref=sr_1_9?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2216,24 +2278,24 @@ header .signature-aptive {
             </div>
         </div>
         
-        <div class="product-card" data-type="ddr" data-size="?" data-price="180.38" data-rating="4.6" data-score="0.10602616698081826">
-            
+        <div class="product-card" data-type="ddr" data-size="?" data-price="180.38" data-rating="4.6" data-score="10.0">
+            <span class="product-badge best-value">⚖️ Best Value</span>
             <div class="product-type">DDR ?</div>
             <img src="https://m.media-amazon.com/images/I/81mwcITtHBL._AC_UY218_.jpg" alt="ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Graphics Card - PCIe 4.0, 6GB GDDR6 Memory, HDMI 2.1, DisplayPort 1.4a, 2-Slot Design, Axial-tech Fan Design, 0dB Technology, Steel Bracket" class="product-image" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=No+Image'">
             <h3 class="product-title">ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Graphics Card - PCIe 4.0, 6GB GDDR6 Memory, HDMI 2.1, DisplayPort 1.4a, 2-Slot Design, Axial-tech Fan Design, 0dB Technology, Steel Bracket</h3>
             <div class="product-price">$180.38</div>
             
-            
-            <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+            <div class="recommendation-badge top">🏆 Our Top Choice <span class="score">10.0/10</span></div>
+            <div class="score-analysis"><strong>Outstanding Choice:</strong> top-rated (4.6★) + competitive price.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-NVIDIA-GeForce-Gaming-Graphics/dp/B0CVCG2VPK/ref=sr_1_10?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
         'event_category': 'outbound',
         'event_label': 'ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Graphics Card - PCIe 4.0, 6GB GDDR6 Memory, HDMI 2.1, DisplayPort 1.4a, 2-Slot Design, Axial-tech Fan Design, 0dB Technology, Steel Bracket',
         'product_name': 'ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Graphics Card - PCIe 4.0, 6GB GDDR6 Memory, HDMI 2.1, DisplayPort 1.4a, 2-Slot Design, Axial-tech Fan Design, 0dB Technology, Steel Bracket',
         'price': 180.38,
-        'score': 0.1,
+        'score': 10.0,
         'value': 180.38
-    });;">🛒 View on Amazon - Fast Delivery</a>
+    });;">🛒 Buy Now - Free Shipping</a>
                 <a href="gpu-asus-dual-nvidia-geforce-rtx-3050-6gb-oc-edition-gaming-grap-en.html" class="details-btn" onclick="gtag('event', 'details_view', {'product_name': 'ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition Gaming Graphics Card - PCIe 4.0, 6GB GDDR6 Memory, HDMI 2.1, DisplayPort 1.4a, 2-Slot Design, Axial-tech Fan Design, 0dB Technology, Steel Bracket'});">📊 View Full Specs & History</a>
             </div>
         </div>
@@ -2245,7 +2307,7 @@ header .signature-aptive {
             <h3 class="product-title">GIGABYTE</h3>
             <div class="product-price">$332.65</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/GIGABYTE-Graphics-WINDFORCE-GV-N4060EAGLE-OC-8GD/dp/B0C8K441T1/ref=sr_1_1?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2267,7 +2329,7 @@ header .signature-aptive {
             <h3 class="product-title">ASUS</h3>
             <div class="product-price">$337.72</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-DisplayPort-Axial-tech-Technology-Auto-Extreme/dp/B0CVPDY3HN/ref=sr_1_2?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2289,7 +2351,7 @@ header .signature-aptive {
             <h3 class="product-title">ASUS</h3>
             <div class="product-price">$268.10</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-DisplayPort-2-5-Slot-Axial-tech-Technology/dp/B0F8PR9L3X/ref=sr_1_3?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2311,7 +2373,7 @@ header .signature-aptive {
             <h3 class="product-title">msi</h3>
             <div class="product-price">$286.97</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/MSI-GeForce-Ventus-Gaming-Graphics/dp/B0C7W8GZMJ/ref=sr_1_4?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2333,7 +2395,7 @@ header .signature-aptive {
             <h3 class="product-title">ASUS</h3>
             <div class="product-price">$253.78</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-GeForce-DisplayPort-Axial-tech-Technology/dp/B0D6CYLHW1/ref=sr_1_5?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2355,7 +2417,7 @@ header .signature-aptive {
             <h3 class="product-title">ASUS</h3>
             <div class="product-price">$296.08</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-DisplayPort-2-5-Slot-Axial-tech-Technology/dp/B0C7YPGFFW/ref=sr_1_6?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2377,7 +2439,7 @@ header .signature-aptive {
             <h3 class="product-title">GIGABYTE</h3>
             <div class="product-price">$361.41</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/GIGABYTE-NVIDIA-GeForce-Eagle-Graphics/dp/B0C8ZRMDC3/ref=sr_1_8?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2399,7 +2461,7 @@ header .signature-aptive {
             <h3 class="product-title">ASUS</h3>
             <div class="product-price">$180.38</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASUS-NVIDIA-GeForce-Gaming-Graphics/dp/B0CVCG2VPK/ref=sr_1_9?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2421,7 +2483,7 @@ header .signature-aptive {
             <h3 class="product-title">GIGABYTE</h3>
             <div class="product-price">$386.79</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/GIGABYTE-GeForce-Graphics-WINDFORCE-GV-N4060OC-8GL/dp/B0CDJLSZ73/ref=sr_1_10?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2443,7 +2505,7 @@ header .signature-aptive {
             <h3 class="product-title">GIGABYTE</h3>
             <div class="product-price">$464.62</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/GIGABYTE-Graphics-WINDFORCE-GV-R77XTGAMING-OC-12GD/dp/B0CGC5P7H3/ref=sr_1_1?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2465,7 +2527,7 @@ header .signature-aptive {
             <h3 class="product-title">ASRock</h3>
             <div class="product-price">$506.92</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASRock-Challenger-RX7800XT-16GO-GDDR6-90-GA4SZZ-00UANF/dp/B0CHK3929K/ref=sr_1_2?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2487,7 +2549,7 @@ header .signature-aptive {
             <h3 class="product-title">XFX</h3>
             <div class="product-price">$558.29</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/XFX-Radeon-7900XT-Graphics-RX-79TMBABF9/dp/B0BNLSDRKB/ref=sr_1_3?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2509,7 +2571,7 @@ header .signature-aptive {
             <h3 class="product-title">ASRock</h3>
             <div class="product-price">$384.90</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASRock-Radeon-Challenger-PRO-750G-High-Performance/dp/B0GJ1B7FB5/ref=sr_1_4?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2531,7 +2593,7 @@ header .signature-aptive {
             <h3 class="product-title">ASRock</h3>
             <div class="product-price">$389.13</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASRock-Radeon-Challenger-High-Performance-Streaming/dp/B0GHZZ493X/ref=sr_1_5?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2553,7 +2615,7 @@ header .signature-aptive {
             <h3 class="product-title">Sapphire</h3>
             <div class="product-price">$506.92</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/Sapphire-11330-02-20G-Radeon-Gaming-Graphics/dp/B0CFWM1LNH/ref=sr_1_6?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2575,7 +2637,7 @@ header .signature-aptive {
             <h3 class="product-title">PowerColor</h3>
             <div class="product-price">$422.32</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/PowerColor-Twin-Radeon-7800-GDDR6/dp/B0DQF23NLJ/ref=sr_1_7?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2597,7 +2659,7 @@ header .signature-aptive {
             <h3 class="product-title">AMD</h3>
             <div class="product-price">$269.80</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/AMD-7700X-16-Thread-Unlocked-Processor/dp/B0BBHHT8LY/ref=sr_1_8?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2619,7 +2681,7 @@ header .signature-aptive {
             <h3 class="product-title">Sapphire</h3>
             <div class="product-price">$342</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/Sapphire-Pulse-Radeon-7600-Graphics/dp/B0C49S5R55/ref=sr_1_9?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2641,7 +2703,7 @@ header .signature-aptive {
             <h3 class="product-title">ASRock</h3>
             <div class="product-price">$380.67</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASRock-Radeon-Challenger-PRO-750B-Bronze/dp/B0GKDB7PK7/ref=sr_1_10?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2663,7 +2725,7 @@ header .signature-aptive {
             <h3 class="product-title">XFX</h3>
             <div class="product-price">$558.29</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/XFX-Radeon-7900XT-Graphics-RX-79TMBABF9/dp/B0BNLSDRKB/ref=sr_1_1?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2685,7 +2747,7 @@ header .signature-aptive {
             <h3 class="product-title">PowerColor</h3>
             <div class="product-price">$760.52</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/PowerColor-Hellhound-Radeon-7900-Graphics/dp/B0BMWSRM7W/ref=sr_1_2?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2707,7 +2769,7 @@ header .signature-aptive {
             <h3 class="product-title">PowerColor</h3>
             <div class="product-price">$422.32</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/PowerColor-Twin-Radeon-7800-GDDR6/dp/B0DQF23NLJ/ref=sr_1_4?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2729,7 +2791,7 @@ header .signature-aptive {
             <h3 class="product-title">ASRock</h3>
             <div class="product-price">$506.92</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/ASRock-Challenger-RX7800XT-16GO-GDDR6-90-GA4SZZ-00UANF/dp/B0CHK3929K/ref=sr_1_5?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2751,7 +2813,7 @@ header .signature-aptive {
             <h3 class="product-title">GIGABYTE</h3>
             <div class="product-price">$539.06</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/Gigabyte-Radeon-7800-Gaming-Graphics/dp/B0CGRMJF6C/ref=sr_1_6?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2773,7 +2835,7 @@ header .signature-aptive {
             <h3 class="product-title">Sapphire</h3>
             <div class="product-price">$506.92</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/Sapphire-11330-02-20G-Radeon-Gaming-Graphics/dp/B0CFWM1LNH/ref=sr_1_8?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2795,7 +2857,7 @@ header .signature-aptive {
             <h3 class="product-title">GIGABYTE</h3>
             <div class="product-price">$530.60</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/GIGABYTE-Graphics-WINDFORCE-GV-R78XTGAMING-OC-16GD/dp/B0CGHQ32S2/ref=sr_1_9?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {
@@ -2817,7 +2879,7 @@ header .signature-aptive {
             <h3 class="product-title">PowerColor</h3>
             <div class="product-price">$507.57</div>
             
-            
+            <div class="recommendation-badge average">○ Average Value <span class="score">0.0/10</span></div>
             <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
             <div class="product-actions">
                 <a href="https://www.amazon.com/PowerColor-Hellhound-Radeon-GDDR6-Graphics/dp/B0CFPJY54Q/ref=sr_1_10?tag=aptive-20" target="_blank" class="buy-btn" onclick="gtag('event', 'click_amazon', {

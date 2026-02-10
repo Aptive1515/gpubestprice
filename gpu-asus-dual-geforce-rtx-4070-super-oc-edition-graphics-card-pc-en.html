@@ -8,12 +8,68 @@
     <meta name="keywords" content="ASUS Dual GeForce RTX 4070 Super OC Edition Graphics Card (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1, DisplayPort 1.4a, 2.56-Slot Design, Axial-tech Fan Design, Auto-Extreme Technology, and More), RTX 4070 Graphics Card, Graphics Card prices, buy RTX 4070, Graphics Card comparison, best Graphics Card 2026">
     <meta property="og:title" content="ASUS Dual GeForce RTX 4070 Super OC Edition Graphics Card (P">
     <meta property="og:description" content="✓ ASUS Dual GeForce RTX 4070 Super OC Edition Graphics Card (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1, DisplayPort 1.4a, 2.56-Slot Design, Axial-tech Fan Design,">
-    <meta property="og:url" content="https://bestgpuprices.com/gpu-asus-dual-geforce-rtx-4070-super-oc-edition-graphics-card-pc-en.html">
+    <meta property="og:url" content="https://gpubestprice.com/gpu-asus-dual-geforce-rtx-4070-super-oc-edition-graphics-card-pc-en.html">
     <meta property="og:type" content="product">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ASUS Dual GeForce RTX 4070 Super OC Edition Graphics Card (P">
     <meta name="twitter:description" content="✓ ASUS Dual GeForce RTX 4070 Super OC Edition Graphics Card (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1, DisplayPort 1.4a, 2.56-Slot Design, Axial-tech Fan Design,">
-    <!-- Google Analytics: Add your ID in config.py -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PF473SL0B8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // Configuration GA4 avec enhanced measurement
+        gtag('config', 'G-PF473SL0B8', {
+            'send_page_view': true,
+            'allow_google_signals': true,
+            'allow_ad_personalization_signals': true
+        });
+        
+        // Track outbound links (Amazon clicks)
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a[href*="amazon.com"]');
+            if (link) {
+                const href = link.getAttribute('href');
+                const card = link.closest('.product-card');
+                const title = card?.querySelector('.product-title')?.textContent || 'Unknown';
+                const priceText = card?.querySelector('.product-price')?.textContent || '0';
+                const price = parseFloat(priceText.replace('$', '').replace(',', ''));
+                
+                // Event GA4 standardisé pour clicks Amazon
+                gtag('event', 'click_amazon', {
+                    'event_category': 'outbound',
+                    'event_label': title.trim(),
+                    'product_name': title.trim(),
+                    'price': price,
+                    'value': price,
+                    'link_url': href,
+                    'link_domain': 'amazon.com'
+                });
+                
+                // Aussi envoyer comme outbound_click (standard GA4)
+                gtag('event', 'outbound_click', {
+                    'link_url': href,
+                    'link_domain': 'amazon.com',
+                    'outbound': true
+                });
+            }
+        });
+        
+        // Track page engagement
+        let engagementTimer = 0;
+        setInterval(function() {
+            engagementTimer += 10;
+            if (engagementTimer % 30 === 0) {  // Tous les 30s
+                gtag('event', 'user_engagement', {
+                    'engagement_time_msec': engagementTimer * 1000
+                });
+            }
+        }, 10000);
+    </script>
+    
     <style>
         
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
@@ -1140,9 +1196,9 @@ header .signature-aptive {
                     <h1>ASUS Dual GeForce RTX 4070 Super OC Edition Graphics Card (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1, DisplayPort 1.4a, 2.56-Slot Design, Axial-tech Fan Design, Auto-Extreme Technology, and More)</h1>
                     <div class="product-rating">⭐ 4.7 (0 reviews)</div>
                     
+                    <div class="recommendation-badge-detail excellent">⭐ Excellent Value <span class="score">7.6/10</span></div>
                     
-                    
-                    <div class="score-analysis"><strong>Budget Option:</strong> good for tight budgets.</div>
+                    <div class="score-analysis"><strong>Excellent Value:</strong> modern GPU + well-rated (4.7★) + good price point.</div>
                     
                     <div class="why-score">
                         Why this score? <a href="methodology_en.html">Learn more</a>
@@ -1153,7 +1209,7 @@ header .signature-aptive {
         'event_label': 'ASUS Dual GeForce RTX 4070 Super OC Edition Graphics Card (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1, DisplayPort 1.4a, 2.56-Slot Design, Axial-tech Fan Design, Auto-Extreme Technology, and More)',
         'product_name': 'ASUS Dual GeForce RTX 4070 Super OC Edition Graphics Card (PCIe 4.0, 12GB GDDR6X, DLSS 3, HDMI 2.1, DisplayPort 1.4a, 2.56-Slot Design, Axial-tech Fan Design, Auto-Extreme Technology, and More)',
         'price': 549.21,
-        'score': 0.1,
+        'score': 7.6,
         'value': 549.21
     });">🛒 View on Amazon - Fast Delivery</a>
                 </div>
